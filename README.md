@@ -60,3 +60,99 @@ Database changed
     -> ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 ```
+
+### SELECT statement 
+
+With the select statement, can shows the column what containce..
+
+```sql
+  SELECT column_name FROM table_name
+  
+```
+
+If want to show all the columns then.
+
+```sql
+  SELECT * FROM table_name
+```
+
+
+
+### DISTINCT statement
+
+The distinct statement selects only the unique values from the given column in the database table.
+
+```sql
+  SELECT DISTINCT(COMPANY_CITY) FROM company
+```
+
+If you want to show show many unuique values are then:
+
+```sql
+  SELECT COUNT(DISTINCT(COMPANY_CITY)) FROM company
+```
+Lastly, if you want to show how many elements where duplicate, then:
+
+```sql
+  SELECT COUNT(*) - COUNT(DISTINCT(COMPANY_CITY)) FROM company
+```
+
+
+### Where statement
+
+The where statement is like filter in the SQL query. 
+
+```sql
+  SELECT * FROM company WHERE COMPANY_ID = 18
+```
+
+It is also possible to filter with string
+
+```sql
+  SELECT * from company WHERE COMPANY_NAME = 'Akas Foods'
+```
+
+Also the where statement can be used with a range of values with the **BETWEEN**
+
+```sql
+  SELECT * from company WHERE COMPANY_ID BETWEEN 16 AND 19
+```
+
+If you want to filter a column name by the starting letter. Then you can use the statement **LIKE** and the **%** to indicate if you search regarding the first letter, the last letter or in between. 
+
+```sql
+  SELECT * FROM company WHERE COMPANY_CITY LIKE 'B%'
+```
+
+Filtering the column by the last letter.
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME LIKE '%s'
+```
+
+Filtering the column by the letter in any position. 
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME LIKE '%s%'
+```
+
+If you want to specify the position of the letter that you are searching. In this case the query is searching ***k*** letter in the 4th position.
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME LIKE '___k%'
+```
+
+If you want to search any values that start with ***F*** and are at least 3 characters in length.
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME LIKE 'F__%'
+```
+
+Searching any values that start from **J** and ends with **d**
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME LIKE 'J%d'
+```
+
+
+
