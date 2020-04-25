@@ -76,6 +76,22 @@ If want to show all the columns then.
   SELECT * FROM table_name
 ```
 
+### TOP, PERCENT or LIMIT 
+
+The limit statement shows the
+
+```sql
+  SELECT * FROM company limit 7;
+```
+The same patter follows 
+
+```sql
+  SELECT TOP 3 * FROM company
+```
+
+```sql
+  SELECT TOP 50 PERCENT * FROM company
+```
 
 
 ### DISTINCT statement
@@ -166,5 +182,53 @@ In this case the query shows all the columns from company that are also in the c
   SELECT * FROM company WHERE COMPANY_CITY IN (SELECT WORKING_AREA FROM agents)
 ```
 
+The SQL **AND**, **OR** and **NOT** Operators. The WHERE clause can be combined with AND, OR, and NOT operators.
+
+For example:
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME = 'Foodies.' OR COMPANY_NAME = 'Order All'
+```
+
+```sql
+  SELECT * FROM company WHERE COMPANY_NAME = 'Foodies.' AND COMPANY_ID = 17
+```
+
+```sql
+  SELECT * FROM company WHERE NOT COMPANY_NAME = 'Foodies.'
+```
+
+### ORDER BY
+
+The ORDER BY keyword is used to sort the result-set in ascending or descending order. For example:
+
+```sql
+  SELECT * FROM company ORDER by COMPANY_CITY 
+```
+
+```sql
+  SELECT * FROM company ORDER by COMPANY_CITY ASC
+```
+
+```sql
+  SELECT * FROM company ORDER by COMPANY_CITY DESC
+```
+
+```sql
+  SELECT * FROM company ORDER by COMPANY_CITY ASC, COMPANY_NAME DESC
+```
+
+
+### How to check for NULL Values ?
+
+It is common that inside to a sql database table will be NULL values.
+
+```sql
+  SELECT * from customer WHERE GRADE is NULL
+```
+
+```sql
+  SELECT * from customer WHERE GRADE is not NULL
+```
 
 
