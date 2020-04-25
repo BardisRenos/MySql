@@ -154,5 +154,17 @@ Searching any values that start from **J** and ends with **d**
   SELECT * FROM company WHERE COMPANY_NAME LIKE 'J%d'
 ```
 
+The **IN** operator allows you to specify multiple values in a WHERE clause. The IN operator is a shorthand for multiple OR conditions. This query shows all the columns when the working_area column has 'London' or 'New York' 
+
+```sql
+  SELECT * from agents WHERE WORKING_AREA IN ('London', 'New York') 
+```
+
+In this case the query shows all the columns from company that are also in the column WORKING_AREA in agent table.
+
+```sql
+  SELECT * FROM company WHERE COMPANY_CITY IN (SELECT WORKING_AREA FROM agents)
+```
+
 
 
