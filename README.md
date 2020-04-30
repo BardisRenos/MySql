@@ -231,4 +231,54 @@ It is common that inside to a sql database table will be NULL values.
   SELECT * from customer WHERE GRADE is not NULL
 ```
 
+### MIN & MAX 
+
+The MIN() function returns the smallest value of the selected column. Whereas, the MAX() function returns the largest value of the selected column.
+
+```sql
+  SELECT MAX(GRADE) from customer; 
+```
+
+```sql
+  SELECT MIN(GRADE) from customer; 
+```
+
+### The SQL COUNT(), AVG() and SUM() functions
+
+The COUNT() returns the number of rows that matches a specified criteria. The AVG() returns the average value of a numeric column. The SUM() returns the total sum of a numeric column. 
+
+```sql
+  SELECT AVG(OPENING_AMT) FROM customer
+```
+
+```sql
+  SELECT SUM(OPENING_AMT) FROM customer
+```
+
+```sql
+  SELECT COUNT(*) FROM customer
+```
+
+### SQL Wildcards
+
+A wildcard character is used to substitute one or more characters in a string. Wildcard characters are used with the SQL LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+This query show all the rows where the CUST_CITY starts with ***lon*** characters.
+
+```sql
+  SELECT * FROM customer where CUST_CITY LIKE 'lon%'
+```
+
+This query shows all the columns from **customer** when the **CUST_CITY** has the *ga* pattern.
+
+```sql
+  SELECT * from customer WHERE CUST_CITY LIKE '%ga%'
+```
+
+This query shows all the columns from **customer** when the **CUST_CITY** starts with the *L* as a first letter then followed from any letter as a third character has *n* 
+
+```sql
+  SELECT * FROM customer WHERE WORKING_AREA LIKE 'L_n_on'
+```
+
 
