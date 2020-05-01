@@ -283,4 +283,28 @@ This query shows all the columns from **customer** when the **CUST_CITY** starts
 
 
 
+### The IN statement 
+
+The IN operator allows you to specify multiple values in a WHERE clause. The IN operator is a shorthand for multiple OR conditions.
+
+
+This query shows all the columns when the ***WORKING_AREA*** equals with *New York* or with *London*
+
+```sql
+  SELECT * FROM agents WHERE WORKING_AREA IN ('New York', 'London')
+```
+
+Whereas, the second sql query shows all column when ***WORKING_AREA*** is not equals with *New York* or with *London*
+
+```sql
+  SELECT * FROM agents WHERE WORKING_AREA NOT IN ('New York', 'London')
+```
+
+In this case the query shows all the columns only if the ***WORKING_AREA*** values are the same  
+with the ***WORKING_AREA*** column on the customer table.
+
+```sql
+  SELECT * FROM agents WHERE WORKING_AREA IN (SELECT WORKING_AREA FROM customer)
+```
+
 
