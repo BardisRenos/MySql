@@ -269,16 +269,18 @@ This query show all the rows where the CUST_CITY starts with ***lon*** character
   SELECT * FROM customer where CUST_CITY LIKE 'lon%'
 ```
 
-This query shows all the columns from **customer** when the **CUST_CITY** has the *ga* pattern.
+This query shows all the columns from **customer** when the **CUST_CITY** has the ***ga*** pattern.
 
 ```sql
   SELECT * from customer WHERE CUST_CITY LIKE '%ga%'
 ```
 
-This query shows all the columns from **customer** when the **CUST_CITY** starts with the *L* as a first letter then followed from any letter as a third character has *n* 
+This query shows all the columns from **customer** when the **CUST_CITY** starts with the *L* as a first letter then followed from any letter as a third character has ***n*** and the fourth any letter. Last two letters end with ***on***
 
 ```sql
   SELECT * FROM customer WHERE WORKING_AREA LIKE 'L_n_on'
 ```
+
+
 
 
