@@ -307,4 +307,34 @@ with the ***WORKING_AREA*** column on the customer table.
   SELECT * FROM agents WHERE WORKING_AREA IN (SELECT WORKING_AREA FROM customer)
 ```
 
+### The JOIN statement
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them. There are 4 types of joins. Like,
+- (INNER) JOIN: Returns records that have matching values in both tables
+- LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+- RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+- FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+This query shows INNER join
+```sql
+  SELECT agents.AGENT_NAME, customer.CUST_NAME FROM agents
+  INNER JOIN customer ON agents.AGENT_CODE = customer.AGENT_CODE ORDER BY AGENT_NAME
+```
+
+The right join query.
+```sql
+```
+
+### The self join 
+
+A self JOIN is a regular join, but the table is joined with itself.
+
+### Having statement 
+
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
+```sql
+  SELECT CUST_CITY, count(GRADE) from customer GROUP BY CUST_CITY HAVING COUNT(GRADE) >2 order by CUST_CITY desc
+
+```
 
